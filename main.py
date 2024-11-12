@@ -31,7 +31,7 @@ def get_client_ip():
     return ip
 i = 0
 platoboost = "https://gateway.platoboost.com/a/8?id="
-discord_webhook_url = "https://discord.com/api/webhooks/1287405218052571219/wFhCgv0qGq_GsqyKDWJRbfnMu5ucEK7PHDmwbkuwycwsgVKGbpcqQ3k-L07PKiRY9BFO" # enter your webhook if security check detected
+discord_webhook_url = "https://discord.com/api/webhooks/1305893318936367145/ztLG1ROqMIvfCa4h8Gikywd6xvvOCb7Tbe3Rc2h7RcfUTyvF03bk_dsMA8NaacLoMxnW" # enter your webhook if security check detected
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -95,7 +95,7 @@ def delta(url):
         if response.status_code != 200:
             security_check_link = f"{platoboost}{id}"
           
-            raise Exception("Security Check, Notified on Discord!")
+            raise Exception("Có link delta có capcha")
 
         loot_link = response.json()
         sleep(1000)
@@ -128,7 +128,7 @@ def delta(url):
         execution_time = time.time() - start_time
         return {
             "status": "error",
-            "error": "please solve the hcaptcha nigga",
+            "error": "hcapcha = no bypass",
             "time taken": f"{execution_time:.2f} seconds"
         }
 

@@ -9,7 +9,7 @@ import time
 import base64
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
-port = int(os.getenv('PORT', 8))
+port = int(os.getenv('PORT', 8080))
 # Configure logging
 logger = logging.getLogger('api_usage')
 logger.setLevel(logging.INFO)

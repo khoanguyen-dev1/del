@@ -14,7 +14,7 @@ port = int(os.getenv('PORT', 8))
 logger = logging.getLogger('api_usage')
 logger.setLevel(logging.INFO)
 
-log_file_path = os.getenv('LOG_FILE_PATH', 'api_usage.log')
+log_file_path = '/tmp/api_usage.log'
 file_handler = logging.FileHandler(log_file_path)
 file_handler.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
